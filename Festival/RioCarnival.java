@@ -7,12 +7,12 @@ import java.util.Random;
  * @reviewer Y.Ashihara
  */
 
-public class RioCarnival extends Object{
+public class RioCarnival extends Festival{
     
     /**
      * 祭りの名前（リオのカーニバル版）
      */
-    public final String  FESTIVAL_NAME = "リオのカーニバル";
+    public final String FESTIVAL_NAME = "リオのカーニバル";
 
     /**
      * ダンスの名前（リオのカーニバル版）
@@ -22,7 +22,7 @@ public class RioCarnival extends Object{
     /**
      * サンバのステップ
      */
-    public String steps[] = {
+    public final String STEPS[] = {
 
         "サンバ・ノ・ペ", "ジンガ", "パソ・バシーコ", "ジーロ", "バリーダ・ジ・クアドラ", "アポイオ",
         "キック・エ・ポイント", "カイーダ・ジ・ラテラウ", "マルカソン", "アバネイラ"
@@ -30,45 +30,60 @@ public class RioCarnival extends Object{
     };
 
     /**
-     * 仮装する衣装の種類
+     * 仮装する衣装
      */
-    public String costumes[] = {
+    public final String COSTUMES[] = {
 
         "ヒーロー", "動物", "サンバの衣装"
 
     };
 
-    public void go() {
+    /**
+     * リオのカーニバルでできることを再現するため、クラスに存在するメソッドを呼び出す。
+     */
+    @Override
+    public void perform() {
+                
         this.join();
         this.dance();
         this.disguise();
+
     }
 
     /**
+     * 祭りの名前（リオのカーニバル版）を取得し、応答する。
      * 
-     * 
-     * リオのカーニバルに参加する。
+     * @return 祭りの名前（リオのカーニバル版）の文字列
      */
-    public void join() {
+    public String getFestivalName() {
 
-        System.out.println("ようこそ、" + FESTIVAL_NAME + "へ！");
+        return this.FESTIVAL_NAME;
 
     }
 
     /**
+     * ダンスの名前（リオのカーニバル版）を取得し、応答する。
      * 
-     * 
+     * @return ダンスの名前（リオのカーニバル版）の文字列
+     */
+    public String getDanceName() {
+
+        return this.DANCE_NAME;
+
+    }
+
+    /**
      * サンバを踊る。
      */
     public void dance() {
 
-        System.out.println(DANCE_NAME + "を踊ろう！");
+        System.out.println(getDanceName() + "を踊ろう！");
         System.out.println("エントラーダ♪"); // 登場のステップ
 
         for(int cnt = 0; cnt < 3; cnt++) {
             
             Random random = new Random(); 
-            String step   = steps[(int)(random.nextInt(steps.length))]; // ステップの取得
+            String step   = this.STEPS[(int)(random.nextInt(this.STEPS.length))]; // ステップの取得
             System.out.print(step + "♪ ");
 
         }
@@ -84,7 +99,7 @@ public class RioCarnival extends Object{
     public void disguise() {
 
         Random random  = new Random(); 
-        String costume = costumes[(int)(random.nextInt(costumes.length))]; // 衣装の取得
+        String costume = this.COSTUMES[(int)(random.nextInt(this.COSTUMES.length))]; // 衣装の取得
 
         System.out.println(costume + "に変身！");
 

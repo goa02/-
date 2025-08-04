@@ -6,7 +6,7 @@ import java.util.Random;
  * @author H.Aoki
  * @reviewer Y.Ashihara
  */
-public class SevilleAprilFair extends Object{
+public class SevilleAprilFair extends Festival{
     
     /**
      * 祭りの名前（セビリアの春祭り版）
@@ -28,32 +28,46 @@ public class SevilleAprilFair extends Object{
 
     };
 
-    public void go() {
+    /**
+     * セビリアの春祭りでできることを再現するため、クラスに存在するメソッドを呼び出す。
+     */
+    @Override
+    public void perform() {
+        
         this.join();
         this.dance();
         this.rideCarriage();
+
     }
 
-
     /**
+     * 祭りの名前（セビリアの春祭り版）を取得し、応答する。
      * 
-     * 
-     * セビリアの春祭りに参加する。
+     * @return 祭りの名前（セビリアの春祭り版）の文字列
      */
-    public void join() {
+    public String getFestivalName() {
 
-        System.out.println("ようこそ、" + FESTIVAL_NAME + "へ！");
+        return this.FESTIVAL_NAME;
 
     }
 
     /**
+     * ダンスの名前（セビリアの春祭り版）を取得し、応答する。
      * 
-     * 
+     * @return ダンスの名前（セビリアの春祭り版）の文字列
+     */
+    public String getDanceName() {
+
+        return this.DANCE_NAME;
+
+    }
+
+    /**
      * フラメンコを踊る。
      */
     public void dance() {
 
-        System.out.println(DANCE_NAME + "を踊ろう！");
+        System.out.println(getDanceName() + "を踊ろう！");
         System.out.println("バモス・アジャ！"); // ショーや曲の初めなどによく用いられるハレオ
 
         for(int cnt = 0; cnt < 3; cnt++) {

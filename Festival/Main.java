@@ -1,17 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends Object{
     public static void main(String[] args) {
     
-        HulaFestival hf = new HulaFestival();
-        hf.go();
-        System.out.println(""); // 改行
+        List<Festival> festivals = new ArrayList<>();
 
-        RioCarnival rf = new RioCarnival();
-        rf.go();
-        System.out.println(""); // 改行
+        festivals.add(new HulaFestival());
+        festivals.add(new RioCarnival());
+        festivals.add(new SevilleAprilFair());
 
-        SevilleAprilFair sf = new SevilleAprilFair();
-        sf.go();
-        System.out.println(""); // 改行
+        for(Festival festival : festivals) {
+
+            festival.perform();
+            System.out.println(""); // 改行
+            
+        }
+    
     }
      
 }

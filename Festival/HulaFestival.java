@@ -6,7 +6,7 @@ import java.util.Random;
  * @author H.Aoki
  * @reviewer Y.Ashihara
  */
-public class HulaFestival extends Object{
+public class HulaFestival extends Festival{
     
     /**
      * 祭りの名前（フラフェスティバル版）
@@ -21,41 +21,58 @@ public class HulaFestival extends Object{
     /**
      * ハンドモーション（フラダンスの振り付け）
      */
-    public String handmotions[] = {
+    public final String HANDMOTIONS[] = {
+
         "フラ", "アロハ", "オエ", "クウ", "ナニ", "プウヴァイ", "オナオナ", "ホイマイ", 
         "ナオ", "プア", "レイ", "マカニ", "マヒナ", "ウア", "ラウ", "アイナ" 
+
     };
 
-    public void go() {
+    /**
+     * フラフェスティバルでできることを再現するため、クラスに存在するメソッドを呼び出す。
+     */
+    @Override
+    public void perform() {
+        
         this.join();
         this.dance();
         this.appreciate();
+
     }
 
     /**
+     * 祭りの名前（フラフェスティバル版）を取得し、応答する。
      * 
-     * 
-     * フラフェスティバルに参加する。
+     * @return 祭りの名前（フラフェスティバル版）の文字列
      */
-    public void join() {
+    public String getFestivalName() {
 
-        System.out.println("ようこそ、" + FESTIVAL_NAME + "へ！");
+        return this.FESTIVAL_NAME;
 
     }
 
     /**
+     * ダンスの名前（フラフェスティバル版）を取得し、応答する。
      * 
-     * 
+     * @return ダンスの名前（フラフェスティバル版）の文字列
+     */
+    public String getDanceName() {
+
+        return this.DANCE_NAME;
+
+    }
+
+    /**
      * フラダンスを踊る。
      */
     public void dance() {
 
-        System.out.println(DANCE_NAME + "を踊ろう！");
+        System.out.println(getDanceName() + "を踊ろう！");
         
         for(int cnt = 0; cnt < 3; cnt++) {
             
             Random random     = new Random(); 
-            String handmotion = handmotions[(int)(random.nextInt(handmotions.length))]; // ハンドモーション（振り付け）の取得
+            String handmotion = this.HANDMOTIONS[(int)(random.nextInt(this.HANDMOTIONS.length))]; // ハンドモーション（振り付け）の取得
             System.out.print(handmotion + "♪");
 
         }
