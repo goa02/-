@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author H.Aoki
+ * @reviewer Y.Ashihara
+ */
 public class Main extends Object{
     public static void main(String[] args) {
     

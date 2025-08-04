@@ -1,3 +1,4 @@
+// java標準ライブラリ　ハンドモーション操作用
 import java.util.Random;
 
 /**
@@ -11,17 +12,17 @@ public class HulaFestival extends Festival{
     /**
      * 祭りの名前（フラフェスティバル版）
      */
-    public final String  FESTIVAL_NAME = "フラフェスティバル";
+    private final String  FESTIVAL_NAME = "フラフェスティバル";
 
     /**
      * ダンスの名前（フラフェスティバル版）
      */
-    public final String  DANCE_NAME = "フラダンス";
+    private final String  DANCE_NAME = "フラダンス";
 
     /**
      * ハンドモーション（フラダンスの振り付け）
      */
-    public final String HANDMOTIONS[] = {
+    private final String HANDMOTIONS[] = {
 
         "フラ", "アロハ", "オエ", "クウ", "ナニ", "プウヴァイ", "オナオナ", "ホイマイ", 
         "ナオ", "プア", "レイ", "マカニ", "マヒナ", "ウア", "ラウ", "アイナ" 
@@ -31,7 +32,6 @@ public class HulaFestival extends Festival{
     /**
      * フラフェスティバルでできることを再現するため、クラスに存在するメソッドを呼び出す。
      */
-    @Override
     public void perform() {
         
         this.join();

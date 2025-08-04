@@ -1,3 +1,4 @@
+// java標準ライブラリ　ハレオ操作用
 import java.util.Random;
 
 /**
@@ -11,17 +12,17 @@ public class SevilleAprilFair extends Festival{
     /**
      * 祭りの名前（セビリアの春祭り版）
      */
-    public final String  FESTIVAL_NAME = "セビリアの春祭り";  
+    private final String  FESTIVAL_NAME = "セビリアの春祭り";  
 
     /**
      * ダンスの名前（セビリアの春祭り版）
      */
-    public final String DANCE_NAME = "フラメンコ";
+    private final String DANCE_NAME = "フラメンコ";
 
     /**
      * ハレオ（フラメンコの掛け声）
      */
-    public String[] jaleos = {
+    private String[] jaleos = {
 
         "アイ！", "オレ！", "アスーカ！" ,"ビエン！", "トカビエン！", "カンタビエン！",
         "バイラビエン！", "バジャ！", "アシ・セ・カンタ！", "アシ・セ・バイラ！"
@@ -31,7 +32,6 @@ public class SevilleAprilFair extends Festival{
     /**
      * セビリアの春祭りでできることを再現するため、クラスに存在するメソッドを呼び出す。
      */
-    @Override
     public void perform() {
         
         this.join();

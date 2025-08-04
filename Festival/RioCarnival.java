@@ -1,3 +1,4 @@
+// java標準ライブラリ　サンバのステップと仮装の衣装操作用
 import java.util.Random;
 
 /**
@@ -12,17 +13,17 @@ public class RioCarnival extends Festival{
     /**
      * 祭りの名前（リオのカーニバル版）
      */
-    public final String FESTIVAL_NAME = "リオのカーニバル";
+    private final String FESTIVAL_NAME = "リオのカーニバル";
 
     /**
      * ダンスの名前（リオのカーニバル版）
      */
-    public final String  DANCE_NAME = "サンバ";
+    private final String  DANCE_NAME = "サンバ";
 
     /**
      * サンバのステップ
      */
-    public final String STEPS[] = {
+    private final String STEPS[] = {
 
         "サンバ・ノ・ペ", "ジンガ", "パソ・バシーコ", "ジーロ", "バリーダ・ジ・クアドラ", "アポイオ",
         "キック・エ・ポイント", "カイーダ・ジ・ラテラウ", "マルカソン", "アバネイラ"
@@ -32,7 +33,7 @@ public class RioCarnival extends Festival{
     /**
      * 仮装する衣装
      */
-    public final String COSTUMES[] = {
+    private final String COSTUMES[] = {
 
         "ヒーロー", "動物", "サンバの衣装"
 
@@ -41,7 +42,6 @@ public class RioCarnival extends Festival{
     /**
      * リオのカーニバルでできることを再現するため、クラスに存在するメソッドを呼び出す。
      */
-    @Override
     public void perform() {
                 
         this.join();
