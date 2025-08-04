@@ -22,7 +22,7 @@ public class SevilleAprilFair extends Festival{
     /**
      * ハレオ（フラメンコの掛け声）
      */
-    private String[] jaleos = {
+    private final String[] JALEOS = {
 
         "アイ！", "オレ！", "アスーカ！" ,"ビエン！", "トカビエン！", "カンタビエン！",
         "バイラビエン！", "バジャ！", "アシ・セ・カンタ！", "アシ・セ・バイラ！"
@@ -73,7 +73,7 @@ public class SevilleAprilFair extends Festival{
         for(int cnt = 0; cnt < 3; cnt++) {
             
             Random random = new Random(); 
-            String jaleo  = jaleos[(int)(random.nextInt(jaleos.length))]; // ハレオ(掛け声)の取得
+            String jaleo  = JALEOS[(int)(random.nextInt(JALEOS.length))]; // ハレオ(掛け声)の取得
             System.out.print(jaleo);
 
         }
